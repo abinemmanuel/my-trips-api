@@ -1,0 +1,41 @@
+# serverless configurations
+service: my-trips-api
+frameworkVersion: '2'
+
+package:
+  individually: false
+  excludeDevDependencies: true
+
+plugins:
+  - serverless-offline
+  - serverless-deployment-bucket
+
+custom:
+  region: us-west-2
+  stage: dev
+  sls-deployment-bucket: my-trips-api-sls-deployment-bucket
+
+provider:
+  name: aws
+  region: ${self:custom.region, opt:region}
+  stage: ${self:custom.stage, opt:stage}
+  runtime: nodejs12.x
+  apiGateway:
+    shouldStartNameWithService: true
+  versionFunctions: false
+  deploymentBucket: 
+    name: ${self:custom.sls-deployment-bucket}-${self:provider.stage}
+  endpointType: REGIONAL
+  environment:
+    STAGE: ${self:provider.stage}
+  httpApi:
+    cors: true # tighten this after client apps are created
+    
+functions:
+  getResultsV1:
+    handler: src/functions/get/v1/getFeatures.handler
+    events:
+      - httpApi:
+          path: /
+          method: get
+

@@ -1,0 +1,41 @@
+{
+  "name": "my-trips-api",
+  "version": "1.0.00",
+  "description": "Micro service API to serve data to the myTrips trip management application.",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx serverless offline",
+    "test": "npm run lint && jest",
+    "jest": "jest --config jest.config.js",
+    "lint": "eslint --color 'src/**/*.js'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/abinemmanuel/my-trips-api.git"
+  },
+  "keywords": [
+    "API",
+    "MicroService",
+    "Restful",
+    "AWS",
+    "Serverless",
+    "Cloud",
+    "lambda",
+    "nodejs",
+    "jest"
+  ],
+  "author": "abinemmanuel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/abinemmanuel/my-trips-api/issues"
+  },
+  "homepage": "https://github.com/abinemmanuel/my-trips-api#readme",
+  "devDependencies": {
+    "eslint": "^7.22.0",
+    "jest": "^26.6.3",
+    "jest-junit": "^12.0.0",
+    "serverless": "^2.30.3",
+    "serverless-deployment-bucket": "^1.4.0",
+    "serverless-offline": "^6.8.0"
+  }
+}
