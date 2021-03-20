@@ -30,7 +30,7 @@ const json = (statusCode, data, headers = {}) => {
         }, headers),
     }
     if (data) {
-        response.body = JSON.stringify(data)
+        response.body = (typeof data === 'string') ? data : JSON.stringify(data, null, 2)
     }
     console.log(response)
     return response

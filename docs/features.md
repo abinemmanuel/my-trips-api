@@ -3,7 +3,7 @@
 ## MVP:
 
 - [x] Create Endpoint.
-- [ ] Create API to list all Trips.
+- [x] Create API to list all Trips.
 - [ ] Option to Sort Trips by timeline.
 - [ ] Option to Sort Trips by type.
 - [ ] Option to Filter Trips by type.

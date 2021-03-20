@@ -38,4 +38,13 @@ functions:
       - httpApi:
           path: /
           method: get
+  getTripsV1:
+    handler: src/functions/trips/get/v1/getTrips.handler
+    events:
+      - httpApi: # default version
+          path: /trips
+          method: get
+      - httpApi:
+          path: /v1/trips
+          method: get
 
