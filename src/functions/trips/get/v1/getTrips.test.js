@@ -16,4 +16,3 @@ describe('When invoking getTrips function', () => {
     })
 
 })
-

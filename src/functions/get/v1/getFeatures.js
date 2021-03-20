@@ -19,4 +19,3 @@ module.exports.handler = async event => {
         return serverError(error)
     }
 }
-  
