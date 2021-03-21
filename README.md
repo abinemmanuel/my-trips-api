@@ -55,6 +55,12 @@ Execute tests as below
 ```bash
 npm run test
 ```
+## Generate OpenAPI Documentation
+Generate api.yml in docs directory as below 
+```bash
+npm run document
+```
+
 ## Manage Plugins
 
 Add plugins like below:
