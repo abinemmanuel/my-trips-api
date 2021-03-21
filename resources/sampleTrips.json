@@ -36,7 +36,7 @@
         "type": "VACATION",
         "startDate": "05/29/2021",
         "endDate": "06/05/2021",
-        "commute": "ROAD",
+        "commute": "AIR",
         "status": "PLANNED"
     }
 
