@@ -1,0 +1,35 @@
+documentation:
+    version: '1.0.01'
+    title: 'My Trips API'
+    description: 'API to serve data to the myTrips trip management application'
+    models: 
+      - name: "GetTripsResponse"
+        description: "GET trips response array (external reference example)"
+        contentType: "application/json"
+        schema: ${file(docs/models/GetTripsResponse.json)}
+      - name: "ServerErrorResponse"
+        description: "Error from server side."
+        contentType: "application/json"
+        schema:
+          $schema: "http://json-schema.org/draft-04/schema#"
+          properties:
+            error:
+              type: "object"
+              properties:
+                errorMessage:
+                  type: "string"
+    endpoints:
+      getTripsV1:
+        summary: "Get Trips"
+        description: "Fetch list of Trips"
+        methodResponses:
+          - statusCode: 201
+            responseBody:
+              description: "A list of Trips"
+              responseModels:
+                application/json: "GetTripsResponse"
+          - statusCode: 500
+            responseBody:
+              description: "An error message from server"
+              responseModels:
+                application/json: "ServerErrorResponse"   

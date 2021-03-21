@@ -1,0 +1,58 @@
+openapi: 3.0.0
+components:
+  schemas:
+    GetTripsResponse:
+      title: trips
+      description: A list of Trips
+      type: array
+      items:
+        title: trip
+        description: A specific Trip
+        type: object
+        properties:
+          id:
+            description: The unique identifier for a Trip
+            type: integer
+          name:
+            description: Name of the trip
+            type: string
+          status:
+            description: Latest status of the trip
+            type: string
+        required:
+          - id
+          - name
+          - status
+      minItems: 0
+      uniqueItems: true
+    ServerErrorResponse:
+      properties:
+        error:
+          type: object
+          properties:
+            errorMessage:
+              type: string
+  securitySchemes: {}
+info:
+  title: My Trips API
+  description: API to serve data to the myTrips trip management application
+  version: 1.0.01
+paths:
+  /v1/trips:
+    get:
+      operationId: getTripsV1
+      summary: Get Trips
+      description: Fetch list of Trips
+      responses:
+        '201':
+          description: Status 201 Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetTripsResponse'
+        '500':
+          description: Status 500 Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServerErrorResponse'

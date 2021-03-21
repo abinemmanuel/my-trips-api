@@ -1,13 +1,14 @@
 {
   "name": "my-trips-api",
-  "version": "1.0.00",
+  "version": "1.0.01",
   "description": "Micro service API to serve data to the myTrips trip management application.",
   "main": "index.js",
   "scripts": {
     "start": "npx serverless offline",
     "test": "npm run lint && jest",
     "jest": "jest --config jest.config.js",
-    "lint": "eslint --color 'src/**/*.js'"
+    "lint": "eslint --color 'src/**/*.js'",
+    "document": "sls openapi generate -o docs/api.yml"
   },
   "repository": {
     "type": "git",
@@ -36,6 +37,7 @@
     "jest-junit": "^12.0.0",
     "serverless": "^2.30.3",
     "serverless-deployment-bucket": "^1.4.0",
-    "serverless-offline": "^6.8.0"
+    "serverless-offline": "^6.8.0",
+    "serverless-openapi-documentation": "^0.4.0"
   }
 }

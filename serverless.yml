@@ -9,11 +9,13 @@ package:
 plugins:
   - serverless-offline
   - serverless-deployment-bucket
+  - serverless-openapi-documentation
 
 custom:
   region: us-west-2
   stage: dev
   sls-deployment-bucket: my-trips-api-sls-deployment-bucket
+  documentation: ${file(docs/serverless.doc.yml):documentation}
 
 provider:
   name: aws
@@ -30,7 +32,7 @@ provider:
     STAGE: ${self:provider.stage}
   httpApi:
     cors: true # tighten this after client apps are created
-    
+  
 functions:
   getResultsV1:
     handler: src/functions/get/v1/getFeatures.handler
@@ -44,7 +46,23 @@ functions:
       - httpApi: # default version
           path: /trips
           method: get
-      - httpApi:
-          path: /v1/trips
+      - http:
+          path: v1/trips
           method: get
+          cors: true
+          # documentation: ${file(serverless.doc.yml):documentation}
+          documentation:
+            summary: "Get Trips"
+            description: "Fetch list of Trips"
+            methodResponses:
+              - statusCode: 201
+                responseBody:
+                description: "A list of Trips"
+                responseModels:
+                  application/json: "GetTripsResponse"
+              - statusCode: 500
+                responseBody:
+                description: "An error message from server"
+                responseModels:
+                  application/json: "ServerErrorResponse"
 

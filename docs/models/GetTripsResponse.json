@@ -1,0 +1,32 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "trips",
+    "description": "A list of Trips",
+    "type": "array",
+    "items": {
+        "title": "trip",
+        "description": "A specific Trip",
+        "type": "object",
+        "properties": {
+            "id": {
+                "description": "The unique identifier for a Trip",
+                "type": "integer"
+            },
+            "name": {
+                "description": "Name of the trip",
+                "type": "string"
+            },
+            "status": {
+                "description": "Latest status of the trip",
+                "type": "string"
+            }
+        },
+        "required": [
+            "id",
+            "name",
+            "status"
+        ]
+    },
+    "minItems": 0,
+    "uniqueItems": true
+}
