@@ -5,7 +5,7 @@
 - [x] Install dependencies
 - [x] Add ESLint.
 - [x] Add Unit Tests
-- [ ] Implement Get APIs to fetch
+- [x] Implement Get APIs to fetch
 - [ ] Integrate Datastore Connection
 - [ ] Secure API with Auth Token / Access key.
 - [ ] Add deployment pipeline.

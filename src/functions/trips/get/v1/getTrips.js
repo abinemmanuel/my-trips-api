@@ -17,6 +17,8 @@ module.exports.handler =  async event => {
         // get the result transformed as per URL query parameters
         const transformed = applyTransform(event.multiValueQueryStringParameters, trips)
 
+        // TODO: implement support for `start` and `count` parameter along with integrating to datastore.
+
         // extracting only basic info needed in the trip list for response
         const response = transformed.map(({id,name,status}) => ({id,name,status}))
         if(response.length === 0) {
