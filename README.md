@@ -69,8 +69,11 @@ npx serverless plugin install --name <plugin-name>
 sls delploy
 ```
 
-[License:](LICENSE)
+## Additional Read:
+- [API Conventions](docs/apiConventions.md)
 
-[Features:](docs/features.md)
+- [License](LICENSE)
 
-[TODO:](docs/TODO.md)
+- [Features](docs/features.md)
+
+- [TODO](docs/TODO.md)
