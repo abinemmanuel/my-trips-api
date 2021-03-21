@@ -5,8 +5,6 @@ const trips = require('../../../../../../resources/sampleTrips.json')
 module.exports.handler = async event => {
     const {ok,error,unavailableError,serverError} = response
 
-    console.log(__filename, event)
-
     try {
         const {id} = event.pathParameters || {}
 
