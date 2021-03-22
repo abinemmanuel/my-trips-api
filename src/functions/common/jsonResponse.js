@@ -7,12 +7,16 @@ const okCreated = (data = undefined) => {
     return json(201, data)
 }
 
-const error = (data, code = 400) => {
+const error = (data = 'Bad Request', code = 400) => {
     return json(code, data)
 }
 
-const authError = (data) => {
+const authError = (data = 'Unauthorized') => {
     return json(401, data)
+}
+
+const unavailableError = (data = 'Not Found') => {
+    return json(404, data)
 }
 
 const serverError = (data) => {
@@ -30,7 +34,7 @@ const json = (statusCode, data, headers = {}) => {
         }, headers),
     }
     if (data) {
-        response.body = JSON.stringify(data)
+        response.body = (typeof data === 'string') ? data : JSON.stringify(data, null, 2)
     }
     console.log(response)
     return response
@@ -41,6 +45,7 @@ module.exports = {
     okCreated,
     error,
     authError,
+    unavailableError,
     serverError
 }
 

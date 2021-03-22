@@ -13,7 +13,7 @@ describe('When invoking getFeatures function', () => {
         expect(response.statusCode).toBe(200)
         expect(response.headers).toBeTruthy()
         expect(response.body).toBeTruthy()
-        expect(JSON.parse(response.body)).toEqual(expected)
+        expect(response.body).toEqual(expected)
     })
 
 
@@ -29,4 +29,5 @@ describe('When invoking getFeatures function', () => {
         expect(response.headers).toBeTruthy()
     })
 })
+
 

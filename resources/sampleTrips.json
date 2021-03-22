@@ -1,0 +1,43 @@
+[
+    {
+        "id":"1",
+        "name":"Cannon Beach Chillout",
+        "destination":"Cannon Beach, OR, USA",
+        "type": "LEISURE",
+        "startDate": "05/24/2020",
+        "endDate": "05/25/2020",
+        "commute": "ROAD",
+        "status": "COMPLETED"
+    },
+    {
+        "id":"2",
+        "name":"Mount Hood Snow Fun",
+        "destination":"Mount Hood, OR, USA",
+        "type": "LEISURE",
+        "startDate": "09/05/2020",
+        "endDate": "09/07/2020",
+        "commute": "ROAD",
+        "status": "COMPLETED"
+    },
+    {
+        "id":"3",
+        "name":"Seaside Bar Be Queue",
+        "destination":"Seaside, OR, USA",
+        "type": "LEISURE",
+        "startDate": "07/04/2020",
+        "endDate": "07/04/2020",
+        "commute": "ROAD",
+        "status": "CANCELLED"
+    },
+    {
+        "id":"4",
+        "name":"Hawaii Trip",
+        "destination":"Honolulu, HI, USA",
+        "type": "VACATION",
+        "startDate": "05/29/2021",
+        "endDate": "06/05/2021",
+        "commute": "AIR",
+        "status": "PLANNED"
+    }
+
+]
