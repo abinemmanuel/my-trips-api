@@ -20,7 +20,7 @@ module.exports.handler =  async event => {
         // TODO: implement support for `start` and `count` parameter along with integrating to datastore.
 
         // extracting only basic info needed in the trip list for response
-        const response = transformed.map(({id,name,status}) => ({id,name,status}))
+        const response = transformed.map(({id,name,status,destination,startDate}) => ({id,name,status,destination,startDate}))
         if(response.length === 0) {
             return unavailableError()
         }

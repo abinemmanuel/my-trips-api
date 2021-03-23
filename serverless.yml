@@ -54,6 +54,6 @@ functions:
           path: /trips/{id}
           method: get
       - httpApi:
-          path: /v1/trips/(id)
+          path: /v1/trips/{id}
           method: get
 
